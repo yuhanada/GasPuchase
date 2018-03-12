@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.20;
 
 contract carAccount{
     
@@ -10,6 +10,10 @@ contract carAccount{
     
     uint fuelType;
     uint amountofgas;
+    
+    uint depositamount;
+    uint billamount;
+    uint changeamount;
     
     
     // when a car arrived at gas station, a car send a message to contract for authentication.
@@ -23,7 +27,7 @@ contract carAccount{
             
         //return (carAddr, pompAddr, authFlag);
     }
-    
+
     function checkAuthFlag(uint b) constant returns(bool a){
         return authFlag;
     }
@@ -45,12 +49,21 @@ contract carAccount{
         return amountofgas;
     }
     
-    function deposit(){
+    function getDepositAmount(uint b) constant returns(uint a){
+        return depositamount;
+    }
+    
+    function deposit() public payable{
+        
+        depositamount += msg.value;
         
     }
     
-    function withdraw(){
+    
+    function withdraw() public{
         
+        msg.sender.transfer(depositamount);
+        depositamount = 0;
     }
 
 }
