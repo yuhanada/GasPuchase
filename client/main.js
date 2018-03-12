@@ -14,9 +14,9 @@ abiArray=[{"constant":true,"inputs":[{"name":"_id","type":"uint256"}],"name":"ge
 binary='0x6060604052341561000f57600080fd5b6104a98061001e6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633b561afc146100675780639859387b146100d1578063bc157ac11461011e578063dac0746f14610181575b600080fd5b341561007257600080fd5b61008860048080359060200190919050506101ed565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b34156100dc57600080fd5b610108600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610247565b6040518082815260200191505060405180910390f35b341561012957600080fd5b610167600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919080359060200190919050506102d6565b604051808215151515815260200191505060405180910390f35b341561018c57600080fd5b6101d3600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001909190803590602001909190505061038b565b604051808215151515815260200191505060405180910390f35b6000806001600084815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600160008581526020019081526020016000206001015491509150915091565b60006001600080828254019250508190555081600160008054815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060006001600080548152602001908152602001600020600101819055506000549050919050565b60008273ffffffffffffffffffffffffffffffffffffffff166001600086815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151561034c5760009050610384565b816001600086815260200190815260200160002060010154016001600086815260200190815260200160002060010181905550600190505b9392505050565b600081600160008781526020019081526020016000206001015410156103b45760009050610475565b8373ffffffffffffffffffffffffffffffffffffffff166001600087815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415156104285760009050610475565b816001600087815260200190815260200160002060010160008282540392505081905550816001600085815260200190815260200160002060010160008282540192505081905550600190505b9493505050505600a165627a7a7230582011bf69056f0fb456165329326f5abd85316d47d38a977c97f7333ee3b660e2ec0029';
 */
 // GasPurchase.sol ContractAddress
-ContractAddress="0x1c405ed8f0dd19c266bba8e493da62ef73dc2e0c";
+ContractAddress="0xcb6106600ce60e443d8f3eed9f63126d623d4d61";
 // GasPurchase.sol abiArray
-abiArray=[{"constant":true,"inputs":[{"name":"_type","type":"uint256"}],"name":"selectType","outputs":[{"name":"_fuelType","type":"uint256"},{"name":"fuelFlag","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_gas","type":"uint256"}],"name":"stopFueling","outputs":[{"name":"_amountofgas","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"checkAuthFlag","outputs":[{"name":"a","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_carAddr","type":"address"},{"name":"_pompAddr","type":"address"}],"name":"authCar","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]	;
+abiArray=[{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getDepositAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_type","type":"uint256"}],"name":"selectType","outputs":[{"name":"_fuelType","type":"uint256"},{"name":"fuelFlag","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_gas","type":"uint256"}],"name":"stopFueling","outputs":[{"name":"_amountofgas","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"checkAuthFlag","outputs":[{"name":"a","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_carAddr","type":"address"},{"name":"_pompAddr","type":"address"}],"name":"authCar","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
 //GasPurchase.sol's binary
 binary="60606040526000600160146101000a81548160ff0219169083151502179055506000600160156101000a81548160ff021916908315150217905550341561004557600080fd5b610252806100546000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806351c1f50c1461005c578063971206a41461009e578063e95336c7146100d5575b600080fd5b341561006757600080fd5b61007d60048080359060200190919050506101ab565b60405180838152602001821515151581526020019250505060405180910390f35b34156100a957600080fd5b6100bf60048080359060200190919050506101f4565b6040518082815260200191505060405180910390f35b34156100e057600080fd5b61012b600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610207565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182151515158152602001935050505060405180910390f35b60008060011515600160149054906101000a900460ff16151514156101e257826002819055506001905060025481915091506101ef565b6000905060025481915091505b915091565b6000816003819055506003549050919050565b60008060008492508391506001905082828292509250925092509250925600a165627a7a723058200fac5e4c629190ea0feafe54688db07b05035052d6647cc1126615763b3f585e0029";
 
@@ -497,6 +497,124 @@ Template.transfer.events({
   },
 });
 
+Template.deposit.events({
+  'click button'(event, instance){
+
+     console.log("click button Deposit");
+     var txObject = {
+     	value: web3.toWei('300','ether'),
+     	gas: 300000,
+     	from: web3.eth.accounts[0]
+     };
+     console.log(web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'));
+     var myContract = web3.eth.contract(abiArray).at(ContractAddress);
+	   myContract.deposit.sendTransaction(txObject, function(err, result){
+  	   if(!err){
+	       console.log("succsecc:"+result);
+         var timer;
+         clearInterval(timer);
+         timer = setInterval(function(){
+           console.log("pending...");
+           var receipt = web3.eth.getTransactionReceipt(result);
+           if (receipt) {
+             console.log("receive deposit:"+web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'));
+             clearInterval(timer);
+             console.log(receipt);
+           }
+         }, 1000);
+       } else {
+         console.log("err"+err);
+         done();
+       }
+     });
+     
+     
+  },
+});
+
+Template.deposit.helpers({
+  
+  Deposit: function(){
+    //return web3.eth.hashrate;
+    //return web3.eth.getBalance(web3.eth.accounts[0]);
+    //return web3.eth.gasPrice;
+    return web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether');
+  }
+
+});
+
+Template.withdraw.events({
+  'click button'(event, instance){
+
+     console.log("click button Withdraw");
+     var txObject = {
+     	//value: 2000,
+     	//gas: 300000,
+     	from: web3.eth.accounts[1],
+     	to: web3.eth.accounts[1]
+     	//from: "0x7323c4de94e28853bdbc7fd77b8b40f762ba4984",
+     	//to: "0x7323c4de94e28853bdbc7fd77b8b40f762ba4984",
+     };
+     console.log(web3.fromWei(web3.eth.getBalance(web3.eth.accounts[1]), 'ether'));
+     var myContract = web3.eth.contract(abiArray).at(ContractAddress);
+	   myContract.withdraw.sendTransaction(txObject, function(err, result){
+  	   if(!err){
+	       console.log("succsecc:"+result);
+         var timer;
+         clearInterval(timer);
+         timer = setInterval(function(){
+           console.log("pending...");
+           var receipt = web3.eth.getTransactionReceipt(result);
+           if (receipt) {
+             console.log("receive deposit:"+web3.fromWei(web3.eth.getBalance(web3.eth.accounts[1]), 'ether'));
+             clearInterval(timer);
+           }
+         }, 1000);
+       } else {
+         console.log("err"+err);
+         //done();
+       }
+     });
+     
+     
+     
+  },
+});
+Template.withdraw.helpers({
+  
+  Withdraw: function(){
+    //return web3.eth.hashrate;
+    //return web3.eth.getBalance(web3.eth.accounts[0]);
+    //return web3.eth.gasPrice;
+    return web3.fromWei(web3.eth.getBalance(web3.eth.accounts[1]), 'ether');
+  }
+
+});
+var depositamount;
+Template.getdepositamount.events({
+  'click button'(event, instance){
+     console.log("click button getdepositamount");
+     var myContract = web3.eth.contract(abiArray).at(ContractAddress);
+
+     myContract.getDepositAmount(1,function(err, result){
+        if(!err){
+           console.log("sucsess:"+result);
+           //Session.set('accountinfo','yuichi');
+						depositamount = result;
+        }
+     });
+
+     console.log("finish click button getaccount");
+  },
+});
+Template.getdepositamount.helpers({
+  
+  getdepositamount: function(){
+    
+     return depositamount;
+  }
+
+});
 
 
 /*Template.hello.events({

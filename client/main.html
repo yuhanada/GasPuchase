@@ -14,6 +14,9 @@
   {{> getaccount}}
   {{> createaccount}}
   {{> transfer}}
+  {{> deposit}}
+  {{> withdraw}}
+  {{> getdepositamount}}
   {{> info}}
 </body>
 
@@ -103,6 +106,20 @@
   AccountInfo:<p>{{Transfer}}</p>
 </template>
 
+<template name="deposit">
+  <button>DEPOSIT</button>
+  AccountInfo:<p>{{Deposit}}</p>
+</template>
+
+<template name="withdraw">
+  <button>WITHDRAW</button>
+  AccountInfo:<p>{{Withdraw}}</p>
+</template>
+
+<template name="getdepositamount">
+  <button>Get Deposit Amount</button>
+  AccountInfo:<p>{{getdepositamount}}</p>
+</template>
 
 <template name="info">
   <h2>Learn Meteor!</h2>
