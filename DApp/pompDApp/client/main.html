@@ -1,0 +1,61 @@
+<head>
+  <title>pompDApp</title>
+</head>
+
+<body>
+  <center><h1>Welcome to Gas Station!</h1></center>
+	<h2>GasPomp DApp</h2>
+	
+	<p style="background-color:#CCCCCC;">{{> gaspompinformation}}</p>
+	<p style="background-color:#FFCC00;">{{> refuelstate}}</p>
+  <p style="background-color:#01DF3A;">{{> selectRefuelType}}</p>
+  <p style="background-color:#58ACFA;">{{> refuelGas}}</p>
+  
+</body>
+
+<template name="gaspompinformation">
+	<h2>Gas Pomp Info</h2>
+	<center><p style="font-size:20px"> Pomp Account: {{accountNo}}</p></center><br>
+	<center><p style="font-size:20px"> Pomp Balance: {{pompBalance}}</p></center><br>
+</template>
+
+<template name="refuelstate">
+  <h2>Gas Pomp State</h2>
+  <br>
+  <center><p style="font-size:20px">State: {{state}}</p></center>
+  <br>
+  <center><p style="font-size:20px">Car Account: {{caracc}}</p></center>
+  <br>
+  <center><p style="font-size:20px">Deposit: {{deposit}}</p></center>
+  <br>
+  <center><p style="font-size:20px">Gas Price: {{price}}</p></center>
+  <br>
+  <center><p style="font-size:20px">Gas Amount: {{amount}}</p></center>
+  <br>
+  <center><p style="font-size:20px">Gas Bill: {{bill}}</p></center>
+  <br>
+  <center><p style="font-size:20px">Change: {{change}}</p></center>
+  <br>
+</template>
+
+<template name="selectRefuelType">
+  <h2>Select Refuel Type</h2>
+  <center><form name="Form1" method = "post" action="#">
+  	<input type="radio" name="number" id="radio-0" value="full" disabled="disabled" ><label for="radio-0" checked="checked" style="font-size:20px">Full(manual)</label><br>
+  	<input type="radio" name="number" id="radio-1" value="gas" disabled="disabled"><label for="radio-1" style="font-size:20px">Gas Amount Specified(Auto)</label>
+  	<p style="displey:inline;  font-size:20px;"><input type="number" max='20' min="1" id="iN1" name="inputNumber1" size="2" disabled='disabled' style="font-size:20px"> Gallon</p>
+  	<input type="radio" name="number" id="radio-2" value="money" disabled="disabled"><label for="radio-2" style="font-size:20px">Money Specified(Auto)</label>
+  	<p style="displey:inline; font-size:20px;"><input type="number" max='20' min="1" id="iN2" name="inputNumber2" size="2" disabled='disabled'> eth</p>
+	</form></center>
+
+  <center><p><input type="button" id='button' value=" Enter " disabled="disabled" style="font-size:20px"></p></center>
+  <center><p style="font-size:20px">Refuel Type: {{selectedrefueltype}}</p></center><br>
+</template>
+<template name="refuelGas">
+  <h2>Refuel Gas</h2>
+  <center><p><input type="button" id='startBtn' value=" Start Refuel " disabled="disabled" style="font-size:20px"></p></center>
+  <center><p><input type="button" id='stopBtn' value=" Stop Refuel " disabled="disabled" style="font-size:20px"></p></center>
+  <center><p style="font-size:20px">Current Amount : {{amountofgas}}</p></center><br>
+  <center><p><input type="button" id='finBtn' value=" Finish Refuel " disabled="disabled" style="font-size:20px"></p></center>
+</template>
+

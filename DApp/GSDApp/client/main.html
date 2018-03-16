@@ -1,0 +1,15 @@
+<head>
+  <title>GSDApp</title>
+</head>
+
+<body style="background-color:#FFCC00;">
+  <h1>Gas Station DApp</h1>
+
+  {{> chengeGasPrice}}
+</body>
+
+<template name="chengeGasPrice">
+  <center><p style="font-size:20px">Current Gas Price : {{gasprice}} eth/Gallon</p></center>
+	<center><p><input type=number id=gasprice min=1 max=10 value=10>eth/Gallon</p></center>
+  <center><p><input type=button id=enterBtn value=Enter></p></center>
+</template>
