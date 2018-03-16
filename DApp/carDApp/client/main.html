@@ -1,0 +1,48 @@
+<head>
+  <title>carDApp</title>
+</head>
+
+<body>
+  <center><h1>Welcome to Gas Station!</h1></center>
+  <h2>Car DApp</h2>
+
+
+  <p style="background-color:#CCCCCC;">{{> carinformation}}</p>
+  <p style="background-color:#FFCC00;">{{> refuelstate}}</p>
+  <p style="background-color:#01DF3A;">{{> authentication}}</p>
+  <p style="background-color:#58ACFA;">{{> receipt}}</p>
+</body>
+
+<template name="carinformation">
+ <h2>Car Information</h2>
+ <center><p style="font-size:20px"> Car Account: {{accountNo}}</p></center><br>
+ <center><p style="font-size:20px"> Cryptocurrency: {{cryptocurrency}}</p></center><br>
+</template>
+
+<template name="refuelstate">
+ <h2>Refuel State</h2>
+  <center><p style="font-size:20px">State: {{state}}</p></center><br>
+</template>
+
+<template name="authentication">
+  <h2>Authentication</h2>
+  <center><p style="font-size:20px">Pomp Account: <input type="text" id="pompacc"></p></center>
+  <center>For example: 0x0ac797e204c117fe474c454ea400f834d44cbc7f</center><br>
+  <center><p style="font-size:20px">Deposit: <input type="number" max=100 min=1 id="deposit"> eth</p></center>
+  
+  <center><input type="button" id="authBtn" value="Enter"  style="font-size:20px"></center>
+  <!--disabled="disabled"-->
+  <br>
+  
+</template>
+
+<template name="receipt">
+  <h2>Receipt</h2>
+  <center><p style="font-size:18px">Date: {{date}}</p></center>
+  <center><p style="font-size:18px">Gas price: {{price}}</p></center>
+  <center><p style="font-size:18px">Gas amount: {{amount}}</p></center>
+  <center><p style="font-size:18px">Gas bill: {{bill}}</p></center>
+  <center><p style="font-size:18px">Deposit: {{deposit}}</p></center>
+  <center><p style="font-size:18px">Change: {{change}}</p></center><br>
+  
+</template>
