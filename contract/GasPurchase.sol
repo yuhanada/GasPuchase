@@ -1,69 +1,96 @@
 pragma solidity ^0.4.20;
 
-contract carAccount{
+contract GasPurchase{
     
-    address carAddr;
-    address pompAddr;
+    address carAcc;
+    address pompAcc;
     
-    bool authFlag = false;
-    bool fuelFlag = false;
+    uint gasPrice;
+    uint gasAmount;
+    uint billAmount;
     
-    uint fuelType;
-    uint amountofgas;
-    
-    uint depositamount;
-    uint billamount;
-    uint changeamount;
-    
-    
-    // when a car arrived at gas station, a car send a message to contract for authentication.
-    function authCar(address _carAddr, address _pompAddr){// constant returns(address carAddr, address pompAddr, bool authFlag){
-        carAddr = _carAddr;
-        pompAddr = _pompAddr;
+    uint depositAmount;
+    uint changeAmount;
 
-        if(carAddr.balance > 99*1000000000000000000){
-            authFlag = true;
-        }
-            
-        //return (carAddr, pompAddr, authFlag);
-    }
-
-    function checkAuthFlag(uint b) constant returns(bool a){
-        return authFlag;
+    function getCarAccount(uint b) constant returns(address a){
+        return carAcc;
     }
     
-    // a car selects fuel type 1. Full(munual), 2. gas amount specified(auto), 3. money specified(auto)
-    function selectType(uint _type) constant returns(uint _fuelType, bool fuelFlag){
-        if (authFlag==true) {
-            fuelType = _type;
-            fuelFlag = true;
-            return (fuelType, fuelFlag);
-        } else {
-            fuelFlag = false;
-            return (fuelType, fuelFlag);
-        }
-    }    
+    function getPompAccount(uint b) constant returns(address a){
+        return pompAcc;
+    }
+    function getGasPrice(uint b) constant returns(uint a){
+        return gasPrice;
+    }
+    
+    function getGasAmount(uint b) constant returns(uint a){
+        return gasAmount;
+    }
+
+    function getBillAmount(uint b) constant returns(uint a){
+        return billAmount;
+    }
    
-    function stopFueling(uint _gas) constant returns(uint _amountofgas){
-        amountofgas = _gas;
-        return amountofgas;
-    }
-    
     function getDepositAmount(uint b) constant returns(uint a){
-        return depositamount;
+        return depositAmount;
+    }
+
+    function getChangeAmount(uint b) constant returns(uint a){
+        return changeAmount;
+    }
+
+    function deposit(address _pompAcc) public payable{
+        depositAmount += msg.value;
+        carAcc = msg.sender;
+        pompAcc = _pompAcc;
     }
     
-    function deposit() public payable{
-        
-        depositamount += msg.value;
-        
+    function depositChange(address _carAcc, uint _gasAmount, uint _billAmount) public payable{
+        changeAmount += msg.value;
+        pompAcc = msg.sender;
+        carAcc = _carAcc;
+        gasAmount = _gasAmount;
+        billAmount = _billAmount;
     }
-    
     
     function withdraw() public{
-        
-        msg.sender.transfer(depositamount);
-        depositamount = 0;
+        if(pompAcc == msg.sender){
+            msg.sender.transfer(depositAmount);
+            depositAmount = 0;
+            carAcc = 0x00;
+            pompAcc = 0x00;
+        }else{
+            // ??
+        }
     }
+    
+    function withdrawChange() public{
+        if(carAcc == msg.sender){
+           msg.sender.transfer(changeAmount);
+            changeAmount = 0;
+            carAcc = 0x00;
+            pompAcc = 0x00;
+        }else{
+            // ??
+        }
+    }
+    
+    function changeGasPrice(uint _gasPrice){
+        gasPrice = _gasPrice;   
+    }
+    
+    function allreset() public{
+        carAcc = 0x00;
+        pompAcc = 0x00;
+    
+        gasPrice = 0;
+        gasAmount = 0;
+        billAmount = 0;
+    
+        depositAmount = 0;
+        changeAmount = 0;
+    }
+    
+    
 
 }
