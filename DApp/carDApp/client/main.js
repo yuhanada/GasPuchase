@@ -5,11 +5,11 @@ import './main.html';
 
 // GasPurchase.sol ContractAddress
 
-ContractAddress="0x4f8a3cfdbc42c7814b8ef61e221d92694f307fff";
+ContractAddress="0x1f9bd98fab640b6de1ae59c2884f0b2a6aee0513";
 
 // GasPurchase.sol abiArray
 
-abiArray=[{"constant":false,"inputs":[],"name":"allreset","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getDepositAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_carAcc","type":"address"},{"name":"_gasAmount","type":"uint256"},{"name":"_billAmount","type":"uint256"}],"name":"depositChange","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_gasPrice","type":"uint256"}],"name":"changeGasPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"withdrawChange","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getChangeAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getCarAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getPompAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasPrice","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getBillAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_pompAcc","type":"address"}],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}];
+abiArray=[{"constant":false,"inputs":[],"name":"allreset","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getPumpAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getDepositAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_carAcc","type":"address"},{"name":"_gasAmount","type":"uint256"},{"name":"_billAmount","type":"uint256"}],"name":"depositChange","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_gasPrice","type":"uint256"}],"name":"changeGasPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"withdrawChange","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getChangeAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getCarAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasPrice","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getBillAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_pumpAcc","type":"address"}],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}];
 
 //GasPurchase.sol's binary
 
@@ -42,15 +42,15 @@ Template.authentication.helpers({
   
 });
 
-Session.setDefault("pompacc", null);
+Session.setDefault("pumpacc", null);
 Session.setDefault("deposit", null);
 Template.authentication.events({
   'click #authBtn'(event, instance) {
     console.log("click Enter Btn");
-    console.log("pomp account is "+document.getElementById("pompacc").value);
-  if (document.getElementById("pompacc").value != ""){
-   Session.set("pompacc", document.getElementById("pompacc").value);
-   console.log("pomp account is "+Session.get("pompacc"));
+    console.log("pump account is "+document.getElementById("pumpacc").value);
+  if (document.getElementById("pumpacc").value != ""){
+   Session.set("pumpacc", document.getElementById("pumpacc").value);
+   console.log("pump account is "+Session.get("pumpacc"));
    if(document.getElementById("deposit").value != ""){
       Session.set("deposit", document.getElementById("deposit").value);
     console.log("depsit is "+Session.get("deposit"));
@@ -60,7 +60,7 @@ Template.authentication.events({
     console.log("please enter deposit amount")
    }
   } else {
-   console.log("please enter a pomp account")
+   console.log("please enter a pump account")
   }
   
   },
@@ -79,7 +79,7 @@ var deposit = function(){
 
     var myContract = web3.eth.contract(abiArray).at(ContractAddress);
 
-    myContract.deposit.sendTransaction(Session.get("pompacc"), txObject, function(err, result){
+    myContract.deposit.sendTransaction(Session.get("pumpacc"), txObject, function(err, result){
      if(!err){
       console.log("succsecc:"+result);
        var timer;
