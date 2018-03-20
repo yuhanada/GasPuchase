@@ -13,4 +13,5 @@ meteor add less
 meteor add ethereum:dapp-styles
 //change file name from main.css to main.less
 //add the following sentence to the file
+main.less
 //@import '{ethereum:dapp-styles}/dapp-styles.less';
