@@ -1,2 +1,6 @@
+<<<<<<< Updated upstream
 2018.03.07名前の変更
+=======
+2018.03.07 rename
+>>>>>>> Stashed changes
 2018.03.15アプリを分割
