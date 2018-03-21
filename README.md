@@ -11,7 +11,7 @@ About DApp
 2. create each DApp
    $ meteor create xxx
 3. copy and paste each files
-4. add following packages 
+4. add following packages  
    $ meteor add twbs:bootstrap
    $ meteor add ethereum:web3
    $ meteor add ethereum:accounts
