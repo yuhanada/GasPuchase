@@ -8,9 +8,9 @@ About Smart Contract
 
 About DApp
 1. set up meteor
-2. create each DApp
+2. create each DApp  
    $ meteor create xxx
-3. copy and paste each files
+3. copy and paste each files(main.html, main.js, main.less)
 4. add following packages  
    $ meteor add twbs:bootstrap  
    $ meteor add ethereum:web3  
@@ -26,5 +26,5 @@ About DApp
       //add the following sentence to the file  
       main.less  
       //@import '{ethereum:dapp-styles}/dapp-styles.less';
-5. run DApp
+5. run DApp  
    $ meteor
