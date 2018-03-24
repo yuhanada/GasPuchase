@@ -2,9 +2,9 @@
   <title>pumpDApp</title>
 </head>
 
-<body>
+<body style="background-color:#000000">
   <center><h1>Welcome to Gas Station!</h1></center>
-	<h2>GasPump DApp</h2>
+	<center><h1>GasPump DApp</h1></center>
 	
 	<p style="background-color:#CCCCCC;">{{> gaspumpinformation}}</p>
 	<p style="background-color:#FFCC00;">{{> refuelstate}}</p>
@@ -14,32 +14,24 @@
 </body>
 
 <template name="gaspumpinformation">
-	<h2>Gas Pump Info</h2>
-	<center><p style="font-size:20px"> Pump Account: {{accountNo}}</p></center><br>
-	<center><p style="font-size:20px"> Pump Balance: {{pumpBalance}}</p></center><br>
+	<h1>Gas Pump Info</h1>
+	<center><p style="font-size:22px"> Pump Account: {{accountNo}}</p></center>
+	<center><p style="font-size:22px"> Pump Balance: {{pumpBalance}} wei</p></center><br>
 </template>
 
 <template name="refuelstate">
-  <h2>Gas Pump State</h2>
-  <br>
+  <h1>Gas Pump State</h1>
   <center><p style="font-size:20px">State: {{state}}</p></center>
-  <br>
   <center><p style="font-size:20px">Car Account: {{caracc}}</p></center>
-  <br>
   <center><p style="font-size:20px">Deposit: {{deposit}}</p></center>
-  <br>
   <center><p style="font-size:20px">Gas Price: {{price}}</p></center>
-  <br>
   <center><p style="font-size:20px">Gas Amount: {{amount}}</p></center>
-  <br>
   <center><p style="font-size:20px">Gas Bill: {{bill}}</p></center>
-  <br>
   <center><p style="font-size:20px">Change: {{change}}</p></center>
-  <br>
 </template>
 
 <template name="selectRefuelType">
-  <h2>Select Refuel Type</h2>
+  <h1>Select Refuel Type</h1>
   <center><form name="Form1" method = "post" action="#">
   	<input type="radio" name="number" id="radio-0" value="full" disabled="disabled" ><label for="radio-0" checked="checked" style="font-size:20px">Full(manual)</label><br>
   	<input type="radio" name="number" id="radio-1" value="gas" disabled="disabled"><label for="radio-1" style="font-size:20px">Gas Amount Specified(Auto)</label>
@@ -51,8 +43,9 @@
   <center><p><input type="button" id='button' value=" Enter " disabled="disabled" style="font-size:20px"></p></center>
   <center><p style="font-size:20px">Refuel Type: {{selectedrefueltype}}</p></center><br>
 </template>
+
 <template name="refuelGas">
-  <h2>Refuel Gas</h2>
+  <h1>Refuel Gas</h1>
   <center><p><input type="button" id='startBtn' value=" Start Refuel " disabled="disabled" style="font-size:20px"></p></center>
   <center><p><input type="button" id='stopBtn' value=" Stop Refuel " disabled="disabled" style="font-size:20px"></p></center>
   <center><p style="font-size:20px">Current Amount : {{amountofgas}}</p></center><br>

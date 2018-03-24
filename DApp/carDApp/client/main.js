@@ -5,27 +5,28 @@ import './main.html';
 
 // GasPurchase.sol ContractAddress
 
-ContractAddress="0x1f9bd98fab640b6de1ae59c2884f0b2a6aee0513";
+ContractAddress="0x6d441de9f2c9b4e4e817ea3b87f880e472e95017";
 
 // GasPurchase.sol abiArray
 
-abiArray=[{"constant":false,"inputs":[],"name":"allreset","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getPumpAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getDepositAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_carAcc","type":"address"},{"name":"_gasAmount","type":"uint256"},{"name":"_billAmount","type":"uint256"}],"name":"depositChange","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_gasPrice","type":"uint256"}],"name":"changeGasPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"withdrawChange","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getChangeAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getCarAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasPrice","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getBillAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_pumpAcc","type":"address"}],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}];
+abiArray=[{"constant":false,"inputs":[],"name":"allreset","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getPumpAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getDepositAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_carAcc","type":"address"},{"name":"_gasAmount","type":"uint256"},{"name":"_billAmount","type":"uint256"}],"name":"depositChange","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getState","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_gasPrice","type":"uint256"}],"name":"changeGasPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"withdrawChange","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getChangeAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getCarAccount","outputs":[{"name":"a","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getGasPrice","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"b","type":"uint256"}],"name":"getBillAmount","outputs":[{"name":"a","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_pumpAcc","type":"address"}],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}];
 
 //GasPurchase.sol's binary
 
 binary="60606040526000600160146101000a81548160ff0219169083151502179055506000600160156101000a81548160ff021916908315150217905550341561004557600080fd5b610252806100546000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806351c1f50c1461005c578063971206a41461009e578063e95336c7146100d5575b600080fd5b341561006757600080fd5b61007d60048080359060200190919050506101ab565b60405180838152602001821515151581526020019250505060405180910390f35b34156100a957600080fd5b6100bf60048080359060200190919050506101f4565b6040518082815260200191505060405180910390f35b34156100e057600080fd5b61012b600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610207565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200182151515158152602001935050505060405180910390f35b60008060011515600160149054906101000a900460ff16151514156101e257826002819055506001905060025481915091506101ef565b6000905060025481915091505b915091565b6000816003819055506003549050919050565b60008060008492508391506001905082828292509250925092509250925600a165627a7a723058200fac5e4c629190ea0feafe54688db07b05035052d6647cc1126615763b3f585e0029";
 
-
+Session.setDefault("balance", 0);
 Template.carinformation.helpers({
   accountNo:function() {
     return web3.eth.accounts[0];
   }, cryptocurrency: function() {
-    return web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether');
+    //return web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether');
+    return Session.get("balance");
   },
 
 });
 
-Session.setDefault("state","Idel"); //Idel, Auth, Refuel, Finish
+Session.setDefault("state","Idle"); //Idle, Auth, Refuel, Finish
 Template.refuelstate.helpers({
   state: function() {
     return Session.get("state");
@@ -71,7 +72,8 @@ var deposit = function(){
  Session.set("state","Auth");
  
  var txObject = {
-      value: web3.toWei(Session.get("deposit"), 'ether'),
+      //value: web3.toWei(Session.get("deposit"), 'ether'),
+      value: Session.get("deposit"),
       gas: 300000,
       from: web3.eth.accounts[0]
     };
@@ -103,33 +105,71 @@ var deposit = function(){
 
 var IntervalId = null;
 var startGetDepositAmountInterval = function(){
+  console.log("start getDepositAmount");
+  IntervalId = setInterval(function() {
+    getDepositAmount();
+  }, 1000);
+}
 
- console.log("start getDepositAmount");
-
+var startGetStateInterval = function(){
+ console.log("start getState");
  IntervalId = setInterval(function() {
-  getDepositAmount();
+  getState();
  }, 1000);
 }
 
 var getDepositAmount = function(){
- var myContract = web3.eth.contract(abiArray).at(ContractAddress);
-
- myContract.getDepositAmount(1, function(err, result){
-  if(!err){
-   console.log("sucsess:"+result);
-   if(result == 0){
-    console.log("authoraized");
-    clearInterval(IntervalId);
-    Session.set("state","Refuel");
-    startGetChangeAmountInterval();
-   } else {
-    console.log("authoraizing now...");
-   }
-  } else{
-   console.log(err);
-  }
- });
+  var myContract = web3.eth.contract(abiArray).at(ContractAddress);
+  
+  myContract.getDepositAmount(1, function(err, result){
+    if(!err){
+      console.log("sucsess:"+result);
+      if(result == 0){
+        console.log("authoraized");
+        clearInterval(IntervalId);
+        Session.set("state","Refuel");
+        startGetChangeAmountInterval();
+      } else {
+        console.log("authoraizing now...");
+      }
+    } else{
+       console.log(err);
+    }
+  });
 }
+
+/*var stateNumber = 0;
+var getState = function(){
+  var myContract = web3.eth.contract(abiArray).at(ContractAddress);
+
+  myContract.getState(1, function(err, result){
+    if(!err){
+      console.log("sucsess:"+result);
+      tempStateNumber = "_"+result;
+      
+      if(stateNumber != tempStateNumber.substr(1)){
+        console.log("change state from "+stateNumber+" to "+result);
+        stateNumber = tempStateNumber.substr(1);
+        if(stateNumber == 0){
+          
+        }else if(stateNumber == 1){
+          
+        }else if(stateNumber == 2){
+          getDepositAmount();
+        }else if(stateNumber == 3){
+          getChangeAmount();
+        }else{
+          console.log(stateNumber+" is wrong state Number");
+        }
+      }else{
+        console.log("same state:"+result);
+      }
+    }else{
+      
+    }
+  });
+}*/
+
 
 var getChangeAmountIntervalId = null;
 var startGetChangeAmountInterval = function(){
@@ -201,6 +241,8 @@ var getReceipt = function(){
  getBillAmount();
 //  Session.set("deposit", tempDeposit);
 //  Session.set("change", tempChange);
+   Session.set("balance", ""+web3.eth.getBalance(web3.eth.accounts[0]));
+
 }
 
 var getGasAmount = function(){
@@ -273,3 +315,10 @@ Template.receipt.helpers({
     return Session.get("change");
   },
 });
+
+var init = function(){
+   console.log("init");
+   Session.set("balance", ""+web3.eth.getBalance(web3.eth.accounts[0]));
+}
+
+init();

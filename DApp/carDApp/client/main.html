@@ -4,7 +4,7 @@
 
 <body>
   <center><h1>Welcome to Gas Station!</h1></center>
-  <h2>Car DApp</h2>
+  <h1>Car DApp</h1>
 
 
   <p style="background-color:#CCCCCC;">{{> carinformation}}</p>
@@ -14,21 +14,21 @@
 </body>
 
 <template name="carinformation">
- <h2>Car Information</h2>
- <center><p style="font-size:20px"> Car Account: {{accountNo}}</p></center><br>
- <center><p style="font-size:20px"> Cryptocurrency: {{cryptocurrency}}</p></center><br>
+ <h1>Car Information</h1>
+ <center><p style="font-size:20px"> Car Account: {{accountNo}}</p></center>
+ <center><p style="font-size:20px"> Cryptocurrency: {{cryptocurrency}} wei</p></center>
 </template>
 
 <template name="refuelstate">
- <h2>Refuel State</h2>
-  <center><p style="font-size:20px">State: {{state}}</p></center><br>
+ <h1>Refuel State</h1>
+  <center><p style="font-size:20px">State: {{state}}</p></center>
 </template>
 
 <template name="authentication">
-  <h2>Authentication</h2>
+  <h1>Authentication</h1>
   <center><p style="font-size:20px">Pump Account: <input type="text" id="pumpacc"></p></center>
-  <center>For example: 0x0ac797e204c117fe474c454ea400f834d44cbc7f</center><br>
-  <center><p style="font-size:20px">Deposit: <input type="number" max=100 min=1 id="deposit"> eth</p></center>
+  <center>For example: 0x0ac797e204c117fe474c454ea400f834d44cbc7f, 0x03e081e97dd6b1e9c0ad2ae2535fa5351c64f409</center>
+  <center><p style="font-size:20px">Deposit: <input type="number" max=1000000 min=1 id="deposit"> wei</p></center>
   
   <center><input type="button" id="authBtn" value="Enter"  style="font-size:20px"></center>
   <!--disabled="disabled"-->
@@ -37,7 +37,7 @@
 </template>
 
 <template name="receipt">
-  <h2>Receipt</h2>
+  <h1>Receipt</h1>
   <center><p style="font-size:18px">Date: {{date}}</p></center>
   <center><p style="font-size:18px">Gas price: {{price}}</p></center>
   <center><p style="font-size:18px">Gas amount: {{amount}}</p></center>
