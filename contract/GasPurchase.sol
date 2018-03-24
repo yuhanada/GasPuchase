@@ -3,7 +3,7 @@ pragma solidity ^0.4.20;
 contract GasPurchase{
     
     address carAcc;
-    address pompAcc;
+    address pumpAcc;
     
     uint gasPrice;
     uint gasAmount;
@@ -11,13 +11,15 @@ contract GasPurchase{
     
     uint depositAmount;
     uint changeAmount;
+    
+    uint stateNumber =  0; // 0:Idle, 1:Auth, 2:Refuel, 3:Finish
 
     function getCarAccount(uint b) constant returns(address a){
         return carAcc;
     }
     
-    function getPompAccount(uint b) constant returns(address a){
-        return pompAcc;
+    function getPumpAccount(uint b) constant returns(address a){
+        return pumpAcc;
     }
     function getGasPrice(uint b) constant returns(uint a){
         return gasPrice;
@@ -38,27 +40,34 @@ contract GasPurchase{
     function getChangeAmount(uint b) constant returns(uint a){
         return changeAmount;
     }
+    
+    function getState(uint b) constant returns(uint a){
+        return stateNumber;
+    }
 
-    function deposit(address _pompAcc) public payable{
+    function deposit(address _pumpAcc) public payable{
         depositAmount += msg.value;
         carAcc = msg.sender;
-        pompAcc = _pompAcc;
+        pumpAcc = _pumpAcc;
+        stateNumber=1;
     }
     
     function depositChange(address _carAcc, uint _gasAmount, uint _billAmount) public payable{
         changeAmount += msg.value;
-        pompAcc = msg.sender;
+        pumpAcc = msg.sender;
         carAcc = _carAcc;
         gasAmount = _gasAmount;
         billAmount = _billAmount;
+        stateNumber=3;
     }
     
     function withdraw() public{
-        if(pompAcc == msg.sender){
+        if(pumpAcc == msg.sender){
             msg.sender.transfer(depositAmount);
             depositAmount = 0;
             carAcc = 0x00;
-            pompAcc = 0x00;
+            pumpAcc = 0x00;
+            stateNumber=2;
         }else{
             // ??
         }
@@ -69,7 +78,8 @@ contract GasPurchase{
            msg.sender.transfer(changeAmount);
             changeAmount = 0;
             carAcc = 0x00;
-            pompAcc = 0x00;
+            pumpAcc = 0x00;
+            stateNumber=0;
         }else{
             // ??
         }
@@ -81,7 +91,7 @@ contract GasPurchase{
     
     function allreset() public{
         carAcc = 0x00;
-        pompAcc = 0x00;
+        pumpAcc = 0x00;
     
         gasPrice = 0;
         gasAmount = 0;
