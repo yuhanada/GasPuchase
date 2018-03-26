@@ -236,7 +236,7 @@ var getReceipt = function(){
  console.log("getReceipt");
  
   Session.set("date", new Date());
-// Session.set("price", tempPrice);
+  getGasPrice();
   getGasAmount();
  getBillAmount();
 //  Session.set("deposit", tempDeposit);
