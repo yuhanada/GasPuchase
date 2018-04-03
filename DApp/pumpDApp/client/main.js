@@ -70,7 +70,7 @@ var getState = function(){
 	
 	myContract.getState(1, function(err, result){
 		if(!err){
-			console.log("sucsess:"+result);
+			//console.log("sucsess:"+result);
 			tempStateNumber = "_"+result;
 			
 			if (stateNumber != tempStateNumber.substr(1)){
@@ -129,6 +129,8 @@ var getCarAccount = function(){
 };
 
 var withdraw = function(){
+
+	console.log(new Date() + " __ " + "start to withdraw");
 	var myContract = web3.eth.contract(abiArray).at(ContractAddress);
   var txObject = {
   	from: web3.eth.accounts[0],
@@ -145,12 +147,13 @@ var withdraw = function(){
 				var receipt = web3.eth.getTransactionReceipt(result);
 				if (receipt) {
 					console.log("receive deposit:"+web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'));
-          clearInterval(timer);
-          Session.set('state', 'Refuel');
-          prepareSelectRefuelType();
-        }
-      }, 1000);
-    }else{
+					clearInterval(timer);
+					console.log(new Date() + " __ " + "finish to withdraw");
+					Session.set('state', 'Refuel');
+					prepareSelectRefuelType();
+				}
+			}, 1000);
+		}else{
       console.log(err);
     }
   });
@@ -345,12 +348,13 @@ var calcbill = function(){
 }
 
 var depositChange = function(){
-	console.log("depositChange");
+
+	console.log(new Date() + " __ " + "deposit Change");
 	var txObject = {
-    value: Session.get('change'),
-    gas: 300000,
-    from: web3.eth.accounts[0]
-  };
+    	value: Session.get('change'),
+    	gas: 300000,
+    	from: web3.eth.accounts[0]
+	};
 
   console.log(web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'));
   var myContract = web3.eth.contract(abiArray).at(ContractAddress);
@@ -366,6 +370,7 @@ var depositChange = function(){
           console.log("receive deposit:"+web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'));
           clearInterval(timer);
           console.log(receipt);
+          console.log(new Date() + " __ " + "finish to deposit change");
           //startGetChangeAmountInterval();
         }
       }, 1000);
