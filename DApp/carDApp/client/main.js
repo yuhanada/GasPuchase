@@ -22,7 +22,9 @@ Template.carinformation.helpers({
   }, cryptocurrency: function() {
     //return web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether');
     return Session.get("balance");
-  },
+  },helperTEXT: function(){
+        return web3.eth.accounts[0];
+  }
 
 });
 
@@ -68,6 +70,8 @@ Template.authentication.events({
 });
 
 var deposit = function(){
+
+ console.log(new Date() + " __ " + "start deposit");
  
  Session.set("state","Auth");
  
@@ -93,6 +97,7 @@ var deposit = function(){
           console.log("receive deposit:"+web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'));
            clearInterval(timer);
            console.log(receipt);
+	console.log(new Date() + " __ " + "finish deposit");
       startGetDepositAmountInterval();
          }
        }, 1000);
@@ -204,8 +209,7 @@ var getChangeAmount = function(){
 }
 
 var withdrawChange = function(){
- console.log("withdrawChange");
-
+ console.log(new Date() + " __ " + "start to withdraw change");
  var myContract = web3.eth.contract(abiArray).at(ContractAddress);
  var txObject = {
    from: web3.eth.accounts[0],
@@ -222,6 +226,7 @@ var withdrawChange = function(){
         var receipt = web3.eth.getTransactionReceipt(result);
         if (receipt) {
           clearInterval(timer);
+	 console.log(new Date() + " __ " + "finish to withdraw change");
      getReceipt();
         }
       }, 1000);
@@ -238,7 +243,7 @@ var getReceipt = function(){
   Session.set("date", new Date());
   getGasPrice();
   getGasAmount();
- getBillAmount();
+  getBillAmount();
 //  Session.set("deposit", tempDeposit);
 //  Session.set("change", tempChange);
    Session.set("balance", ""+web3.eth.getBalance(web3.eth.accounts[0]));
